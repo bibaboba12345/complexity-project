@@ -2,12 +2,15 @@
 #include <algorithm>
 #include <vector>
 #include <random>
+#include <unordered_map>
 
 using namespace std;
 
 const int d = 2;
 const int pow2 = 4;
 const int sqrtd = 1;
+int m; // portals per edge
+const int r = 10 * c; // number of crossings
 
 template<typename T>
 struct Point{
@@ -18,6 +21,10 @@ struct Point{
         }
     }
 };
+
+struct 
+
+
 
 
 
@@ -72,7 +79,8 @@ void calc_perturbation() {
 
 struct Tree_node{
     int l[d], r[d];
-    Tree_node* children[pow2];
+    vector<Tree_node*> children; // each child may split at every side of the partition, at most pow2 * pow2 children
+
 };
 
 Tree_node* root;
